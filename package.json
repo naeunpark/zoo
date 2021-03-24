@@ -1,0 +1,31 @@
+{
+  "name": "zoo",
+  "version": "1.0.0",
+  "description": "scss cloning website practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeunpark/zoo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naeunpark/zoo/issues"
+  },
+  "homepage": "https://github.com/naeunpark/zoo#readme",
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.8",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-scss": "^1.4.0",
+    "node-sass": "^5.0.0"
+  }
+}
