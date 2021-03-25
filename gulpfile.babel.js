@@ -1,10 +1,10 @@
 import gulp from "gulp";
-import scss from "gulp-scss";
+import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import minify from "gulp-csso";
 import del from "del";
 
-scss.compiler = require("node-sass");
+sass.compiler = require("node-sass");
 
 const routes = {
     css: {
@@ -17,7 +17,7 @@ const routes = {
 const styles = () => 
     gulp
         .src(routes.css.src)
-        .pipe(scss().on("error", sass.logError))
+        .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({
             flexbox: true,
             gird: "autoplace"
@@ -25,5 +25,16 @@ const styles = () =>
         .pipe(minify())
         .pipe(gulp.dest(routes.css.dest));
 
-const watch = () =>
+const watch = () => 
         gulp.watch(routes.css.watch, styles);
+
+const clean = () =>
+        del([routes.css.dest]);
+
+const prepare = gulp.series([clean]);
+
+const assets = gulp.series([styles]);
+
+const live = gulp.series([watch]);
+
+export const dev = gulp.series([prepare, assets, live]);
