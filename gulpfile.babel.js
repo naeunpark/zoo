@@ -20,7 +20,7 @@ const styles = () =>
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({
             flexbox: true,
-            gird: "autoplace"
+            grid: "autoplace"
         }))
         .pipe(minify())
         .pipe(gulp.dest(routes.css.dest));
