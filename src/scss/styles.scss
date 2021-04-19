@@ -9,9 +9,48 @@ body {
     font-size: 1.6rem;
 }
 
-
 header {
-    display: flex;
+    nav {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        & > div {
+            padding: 0 1rem 1rem;
+        }
+    }
+    .logo {
+        margin-right: 10rem;
+    }
+    a {
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #000
+    }
+    a.grey {
+        color: #ccc;
+        margin-right: 7rem;
+    }
+    .right {
+        font-size: 2rem;
+        align-self: flex-end;
+    }
+    div{
+        &:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+            div {
+                a {
+                    margin-right: 7rem;
+                }
+            }
+        }
+        &:hover {
+            background-color: #ccc;
+            a.grey {
+                color: #fff;
+            }
+        }
+    }
 }
 
 main {
